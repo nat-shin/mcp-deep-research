@@ -1,0 +1,21 @@
+[package]
+name = "mcp-deep-research"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "MCP server for deep research — multi-source web search + content extraction + structured synthesis"
+
+[dependencies]
+tokio = { version = "1", features = ["full", "macros", "rt-multi-thread"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+scraper = "0.21"
+rmcp = { version = "0.1", features = ["server", "transport-sse"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["test-util"] }
